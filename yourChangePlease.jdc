@@ -1,4 +1,6 @@
+print("Enter cost of purchase: ");
 double cost = Double.parseDouble(System.console().readLine());
+print("Enter amount paid: ");
 double paid = Double.parseDouble(System.console().readLine());
 double change = paid - cost;
 int note50 = 0;
@@ -62,3 +64,8 @@ while(change >= 0.01) {
 	change -= 0.01;
 	coin001++;
 }
+print("Your change is " + note50 + " notes of 50, " + note20 + " notes of 20, " +
+	   note10 + " notes of 10, " + note5 + " notes of 5, " + coin2 + " coins of 2, " +
+	   coin1 + " coins of 1, " + coin050 + " coins of 0.50, " + coin020 + " coins of 0.20, " +
+	   coin010 + " coins of 0.10, " + coin005 + " coins of 0.05, " + coin002 + " coins of 0.02 and " +
+	   coin001 + " coins of 0.01.");
