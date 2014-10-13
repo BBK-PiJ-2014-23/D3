@@ -1,4 +1,6 @@
+print("Enter some text: ");
 String str = System.console().readLine();
+print("Enter the letter you would like to count: ");
 String letter = System.console().readLine();
 int strLength = str.length();
 int counter = 0;
@@ -8,3 +10,4 @@ for (int i = 0; i < strLength; i++) {
 		counter++;
 	}
 }
+println("Letter " + letter + " appears in your text " + counter + " times.");
