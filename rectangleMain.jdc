@@ -6,6 +6,12 @@ rectangle.downRight = new Point();
 rectangle.downRight.x = Double.parseDouble(System.console().readLine());
 rectangle.downRight.y = Double.parseDouble(System.console().readLine());
 
+double sideA = rectangle.downRight.x - rectangle.upLeft.x;
+double sideB = rectangle.upLeft.y - rectangle.downRight.y;
+
+double perimeter = 2 * sideA + 2 * sideB;
+double area = sideA * sideB;
+
 class Rectangle {
 	Point upLeft;
 	Point downRight;
