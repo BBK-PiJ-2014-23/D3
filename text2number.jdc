@@ -1,3 +1,4 @@
+print("Please enter a number with commas and decimal dots: ");
 String str = System.console().readLine();
 String strNumbersOnly = "";
 double number = 0;
@@ -16,3 +17,4 @@ for (int i = strNumbersOnly.length() - 1; i >= 0; i--) {
 	multiplicator *= 10;
 }
 number /= 2;
+println("Half of your number is " + number);
