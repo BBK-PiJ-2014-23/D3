@@ -1,3 +1,11 @@
+Rectangle rectangle = new Rectangle();
+rectangle.upLeft = new Point();
+rectangle.upLeft.x = Double.parseDouble(System.console().readLine());
+rectangle.upLeft.y = Double.parseDouble(System.console().readLine());
+rectangle.downRight = new Point();
+rectangle.downRight.x = Double.parseDouble(System.console().readLine());
+rectangle.downRight.y = Double.parseDouble(System.console().readLine());
+
 class Rectangle {
 	Point upLeft;
 	Point downRight;
