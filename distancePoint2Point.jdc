@@ -1,3 +1,4 @@
+println("Please enter the x and y coordinates of three points:");
 Point p1 = new Point();
 p1.x = Double.parseDouble(System.console().readLine());
 p1.y = Double.parseDouble(System.console().readLine());
@@ -20,6 +21,7 @@ if (p1ToP2 < p2ToP3 && p1ToP2 < p3ToP1) {
 } else {
 	result = "Point 1 and Point 3";
 }
+println(result + " are the points closest together.");
 
 class Point {
 	double x;
