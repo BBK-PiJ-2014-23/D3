@@ -25,9 +25,17 @@ point.y = Double.parseDouble(System.console().readLine());
 String result = "";
 
 if (point.x <= rect1.downRight.x && point.x >= rect1.upLeft.x &&
+    point.y <= rect1.upLeft.y && point.y >= rect1.downRight.y &&
+	point.x <= rect2.downRight.x && point.x >= rect2.upLeft.x &&
+    point.y <= rect2.upLeft.y && point.y >= rect2.downRight.y) {
+	result = "inside both rectangles";
+} else if (point.x <= rect1.downRight.x && point.x >= rect1.upLeft.x &&
     point.y <= rect1.upLeft.y && point.y >= rect1.downRight.y) {
-	result = "inside";
+	result = "inside the first rectangle";
+} else if (point.x <= rect2.downRight.x && point.x >= rect2.upLeft.x &&
+    point.y <= rect2.upLeft.y && point.y >= rect2.downRight.y) {
+	result = "inside the second rectangle";
 } else {
-	result = "outside";
+	result = "outside either rectangles";
 }
-println("The third point is " + result + " of the rectangle.");
+println("The fifth point is " + result + ".");
