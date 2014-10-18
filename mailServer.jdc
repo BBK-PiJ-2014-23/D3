@@ -37,6 +37,18 @@ while (!finished) {
 		} else {
 			println("Invalid email address");
 		}
+	} else if (validRecipient && str.equals("DATA")) {
+		boolean bodyFinished = false;
+		str = "";
+		String line = "";
+		while (!bodyFinished) {
+			line = System.console().readLine();
+			if (line.equals(".")) {
+				bodyFinished = true;
+			} else {
+				str = str + line + '\n';
+			}
+		}
 	} else {
 		println("Invalid command.");
 	}
