@@ -1,6 +1,8 @@
 boolean finished = false;
 boolean validSender = false;
 boolean validRecipient = false;
+String sender = "";
+String recipient = "";
 
 println("Welcome to My Mail Server!");
 while (!finished) {
@@ -10,7 +12,7 @@ while (!finished) {
 	if (str.equals("QUIT")) {
 		finished = true;
 	} else if (str.length() > 10 && str.substring(0, 11).equals("MAIL FROM: ")) {
-		String sender = str.substring(11, str.length());
+		sender = str.substring(11, str.length());
 		int at = 0;
 		for (int i = 1; i < sender.length() - 1; i++) {
 			if (sender.charAt(i) == '@') {
@@ -24,7 +26,7 @@ while (!finished) {
 			println("Invalid email address");
 		}
 	} else if (validSender && str.length() > 8 && str.substring(0, 9).equals("RCPT TO: ")) {
-		String recipient = str.substring(9, str.length());
+		recipient = str.substring(9, str.length());
 		int at = 0;
 		for (int i = 1; i < recipient.length() - 1; i++) {
  			if (recipient.charAt(i) == '@') {
@@ -49,6 +51,11 @@ while (!finished) {
 				str = str + line + '\n';
 			}
 		}
+		println("Sending email...");
+		println("from: " + sender);
+		println("to: " + recipient);
+		print(str);
+		println("...done!");
 	} else {
 		println("Invalid command.");
 	}
