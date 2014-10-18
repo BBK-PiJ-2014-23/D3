@@ -8,7 +8,14 @@ while (!finished) {
 		finished = true;
 	} else if (str.length() > 10 && str.substring(0, 11).equals("MAIL FROM: ")) {
 		String email = str.substring(11, str.length());
-		println(email);
+		//println(email);
+		boolean validMail = false;
+		for (int i = 1; i < email.length() - 1; i++) {
+			if (email.charAt(i) == '@') {
+				validMail = true;
+			}
+		}
+		println(validMail);
 	} else {
 		;
 	}
