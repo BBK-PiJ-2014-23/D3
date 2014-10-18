@@ -3,5 +3,9 @@ boolean finished = false;
 while (!finished) {
 	print(">>> ");
 	String str = System.console().readLine();
+	
+	if (str.equals("QUIT")) {
+		finished = true;
+	}
 }
 
