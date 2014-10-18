@@ -11,7 +11,7 @@ while (!finished) {
 	
 	if (str.equals("QUIT")) {
 		finished = true;
-	} else if (str.length() > 10 && str.substring(0, 11).equals("MAIL FROM: ")) {
+	} else if (!validSender && str.length() > 10 && str.substring(0, 11).equals("MAIL FROM: ")) {
 		sender = str.substring(11, str.length());
 		int at = 0;
 		for (int i = 1; i < sender.length() - 1; i++) {
@@ -25,7 +25,7 @@ while (!finished) {
 		} else {
 			println("Invalid email address");
 		}
-	} else if (validSender && str.length() > 8 && str.substring(0, 9).equals("RCPT TO: ")) {
+	} else if (validSender && !validRecipient && str.length() > 8 && str.substring(0, 9).equals("RCPT TO: ")) {
 		recipient = str.substring(9, str.length());
 		int at = 0;
 		for (int i = 1; i < recipient.length() - 1; i++) {
